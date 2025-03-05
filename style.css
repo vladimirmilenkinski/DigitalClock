@@ -1,0 +1,45 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: black;
+    color:turquoise;
+    font-family: Arial, sans-serif;
+    margin: 0;
+
+}
+@media (max-width: 750px) {
+    #time > img.number {
+        height: calc(1.5 * 11vw);
+        width: 11vw;
+    }
+    #time > img.colon {
+        height: calc(1.5 * 11vw);
+        width: 4.29vw;
+    }
+    #date {
+        font-size: 1.1rem;
+    }
+
+}
+
+.clock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-size: 2rem;
+}
+.alarm-setting {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50vh;
+}
+#time, #date {
+    margin: 10px 0;
+}
+
