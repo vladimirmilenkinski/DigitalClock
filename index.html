@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,30 +7,45 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<audio id="alarm-sound" src="alarm.wav" preload="auto"></audio>
+<audio id="alarm-sound" src="alarms/alarm1.wav" preload="auto"></audio>
 <div class="clock">
     <div id="time">
         <img class="number">
         <img class="number">
-        <img  src="img/colon.PNG" class ="colon">
+        <img src="img/colon.PNG" class="colon">
         <img class="number">
         <img class="number">
-        <img  src="img/colon.PNG" class ="colon">
+        <img src="img/colon.PNG" class="colon">
         <img class="number">
         <img class="number">
+        <div id="am-pm"></div>
     </div>
     <div id="date"></div>
 </div>
 <div class="alarm-setting">
     <label for="alarm-time">Задай час и дата за алармата:</label>
     <input type="datetime-local" id="alarm-time">
-    <button onclick="settingAlarm()">Задай аларма</button>
-    <button id="stop-alarm" onclick="stopAlarm()">Спри алармата</button>
-    <button onclick="settingVibration()">Задай вибрация</button>
-    <button id="stop-vibration" onclick="stopVibration()">Спри вибрацията</button>
-    <button id="vibration-notice" style="display: none; color: green;"></button>
+    <div>
+        <label for="alarm-sound-dropdown">Избери звук за аларма</label>
+        <select id="alarm-sound-dropdown" onchange="setAlarmSound()">
+        <option value="alarms/alarm1.wav">Сирена</option>
+        <option value="alarms/alarm2.wav">Казино</option>
+        <option value="alarms/alarm3.wav">Магаре</option>
+        </select>
+    </div>
+    <div id="buttons">
+        <div id="row1">
+            <button onclick="settingAlarm()">Задай аларма</button>
+            <button id="stop-alarm" onclick="stopAlarm()">Спри алармата</button>
+        </div>
+        <div id="row2">
+            <button onclick="settingVibration()">Задай вибрация</button>
+            <button id="stop-vibration" onclick="stopVibration()">Спри вибрацията</button>
+        </div>
+    </div>
 </div>
 <div id="alarm-notice" style="display: none; color: red;"></div>
+<div id="vibration-notice" style="display: none; color: red;"></div>
 <script src="script.js"></script>
 </body>
 </html>
